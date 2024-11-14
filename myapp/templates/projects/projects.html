@@ -1,0 +1,25 @@
+<nav class="navbar container">
+    <ul>
+        <li>
+            <a href="{% url 'index' %}">Home</a>
+        </li>
+        
+        <li>
+            <a href="{% url 'projects' %}">Projects</a>
+        </li>
+        
+        
+        <li>
+            <a href="{% url 'create_project' %}">Create Project</a>
+        </li>
+    </ul>
+</nav>
+
+
+
+<h1>Projects</h1>
+
+{% for project in projects %} 
+<a href="{% url 'project_detail' project.id %}">
+    {{ project.name }}</a> 
+    {% endfor %}

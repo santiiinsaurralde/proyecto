@@ -1,0 +1,27 @@
+<nav class="navbar container">
+    <ul>
+        <li>
+            <a href="{% url 'index' %}">Home</a>
+        </li>
+        
+        <li>
+            <a href="{% url 'projects' %}">Projects</a>
+        </li>
+        
+        <li>
+            <a href="{% url 'create_project' %}">Create Project</a>
+        </li>
+    </ul>
+</nav>
+
+
+
+<h1>Create Project</h1>
+
+<form method="POST">
+    {% csrf_token %}
+    {{form}}
+    <button>
+        Save
+    </button>
+</form>
